@@ -1,4 +1,8 @@
-;; Stopwatch --- time yo'self -*- lexical-binding: t; -*-
+;;; stopwatch.el --- time yo'self -*- lexical-binding: t; -*-
+
+;; Maintainer: asnr <https://github.com/asnr>
+;; Version: 0.0.1
+;; URL: https://github.com/asnr/stopwatch
 
 ;;; Commentary:
 
