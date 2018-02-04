@@ -8,6 +8,7 @@
 
 (defconst ASCII-ART-NUM-ROWS 4)
 
+;; This ASCII art is built using the box drawing unicode characters, drawn from the range U+2500 to U+256E.
 (defconst RAW-ASCII-ART-NUMBERS
   '((?: . ("  "
            " o"
