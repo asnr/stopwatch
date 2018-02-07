@@ -18,7 +18,7 @@
 (load-file "./stopwatch-time-helpers.el")
 
 (defun stopwatch ()
-  "Open the stopwatch in a new window."
+  "Open a stopwatch in a new window."
   (interactive)
   (let* ((stopwatch-buffer (generate-new-buffer "stopwatch"))
          (controller (controller-construct stopwatch-buffer)))
