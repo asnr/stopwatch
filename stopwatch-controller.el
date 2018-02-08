@@ -84,7 +84,7 @@
          (buffer (stopwatch-controller--get-buffer controller))
          (is-running (stopwatch-controller--running-p controller))
          (window-width (stopwatch-controller--get-original-window-width controller)))
-    (display-stopwatch is-running total-time laps buffer window-width)))
+    (stopwatch-display is-running total-time laps buffer window-width)))
 
 (defun stopwatch-controller--attach-finalise-hook (controller)
   (add-hook 'kill-buffer-hook
