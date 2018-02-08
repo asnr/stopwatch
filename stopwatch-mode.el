@@ -20,15 +20,15 @@
 
 (defun stopwatch-mode-start-or-stop ()
   (interactive)
-  (controller-start-or-stop-stopwatch buffer-local-stopwatch-controller))
+  (stopwatch-controller-start-or-stop-stopwatch buffer-local-stopwatch-controller))
 
 (defun stopwatch-mode-end-lap ()
   (interactive)
-  (controller-end-lap buffer-local-stopwatch-controller))
+  (stopwatch-controller-end-lap buffer-local-stopwatch-controller))
 
 (defun stopwatch-mode-reset-stopwatch ()
   (interactive)
-  (controller-reset-stopwatch buffer-local-stopwatch-controller))
+  (stopwatch-controller-reset-stopwatch buffer-local-stopwatch-controller))
 
 ;; By default, the evil normal mode keymaps will take precedence over the
 ;; stopwatch-mode-map and "q" will resolve to evil-record-macro. Make evil use

@@ -21,8 +21,8 @@
   "Open a stopwatch in a new window."
   (interactive)
   (let* ((stopwatch-buffer (generate-new-buffer "stopwatch"))
-         (controller (controller-construct stopwatch-buffer)))
-    (controller-start controller)))
+         (controller (stopwatch-controller-construct stopwatch-buffer)))
+    (stopwatch-controller-start controller)))
 
 (provide 'stopwatch)
 

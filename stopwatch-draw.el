@@ -91,7 +91,7 @@
 
 (defun ascii-artify (watchface-string)
   (let* ((ascii-art-digits (ascii-art-list watchface-string))
-         (line-numbers (number-sequence 0 (1- ASCII-ART-NUM-ROWS))))
+         (line-numbers (number-sequence 0 (1- STOPWATCH-ASCII-ART-NUM-ROWS))))
     (mapcar (lambda (n) (line-n n ascii-art-digits)) line-numbers)))
 
 (defun line-n (n ascii-art-list)
@@ -99,7 +99,7 @@
 
 (defun ascii-art-list (watchface-string)
   (mapcar
-   (lambda (c) (cdr (assoc c RAW-ASCII-ART-NUMBERS)))
+   (lambda (c) (cdr (assoc c STOPWATCH-ASCII-ART-NUMBERS)))
    watchface-string))
 
 ;;; stopwatch-draw.el ends here
