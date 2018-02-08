@@ -6,28 +6,28 @@
 
 ;;; Code:
 
-(defun zero-seconds-parts (time)
-  (list 0 0 (microsec time) (picosec time)))
+(defun stopwatch-zero-seconds-parts (time)
+  (list 0 0 (stopwatch-microsec time) (stopwatch-picosec time)))
 
-(defun mod-tenths-of-a-second (time)
-  (list 0 0 (% (microsec time) 100000) (picosec time)))
+(defun stopwatch-mod-tenths-of-a-second (time)
+  (list 0 0 (% (stopwatch-microsec time) 100000) (stopwatch-picosec time)))
 
-(defun round-down-to-seconds (time)
-  (+ (* (sec-high time) (lsh 1 16)) (sec-low time)))
+(defun stopwatch-round-down-to-seconds (time)
+  (+ (* (stopwatch-sec-high time) (lsh 1 16)) (stopwatch-sec-low time)))
 
-(defun tenths-of-a-second (time)
-  (/ (microsec time) 100000))
+(defun stopwatch-tenths-of-a-second (time)
+  (/ (stopwatch-microsec time) 100000))
 
-(defun sec-high (time)
+(defun stopwatch-sec-high (time)
   (nth 0 time))
 
-(defun sec-low (time)
+(defun stopwatch-sec-low (time)
   (nth 1 time))
 
-(defun microsec (time)
+(defun stopwatch-microsec (time)
   (nth 2 time))
 
-(defun picosec (time)
+(defun stopwatch-picosec (time)
   (nth 3 time))
 
 ;;; stopwatch-time-helpers.el ends here

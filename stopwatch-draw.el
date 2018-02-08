@@ -31,7 +31,7 @@
       (insert STOPWATCH-STOPPED-INSTRUCTIONS))
     (add-text-properties 1 (point-max) '(face stopwatch-ultra-light))
     (insert "\n\n")
-    (let* ((total-seconds (round-down-to-seconds total-time))
+    (let* ((total-seconds (stopwatch-round-down-to-seconds total-time))
            (watchface-string (stopwatch-to-watchface-string total-seconds))
            (ascii-art-lines (stopwatch-ascii-artify watchface-string))
            (seconds-display-start (point-max)))
@@ -43,7 +43,7 @@
                               seconds-display-end
                               '(face stopwatch-ultra-bold)))
       )
-    (insert (format " . %d" (tenths-of-a-second total-time)))
+    (insert (format " . %d" (stopwatch-tenths-of-a-second total-time)))
     (insert "\n\n\n")
     (let* ((stringified-laps (seq-map 'stopwatch-to-watchface-string-precise
                                       laps))
@@ -84,9 +84,10 @@
           (t (format "%d" seconds)))))
 
 (defun stopwatch-to-watchface-string-precise (elapsed-time)
-  (let* ((total-seconds (round-down-to-seconds elapsed-time))
+  (let* ((total-seconds (stopwatch-round-down-to-seconds elapsed-time))
          (hours-minutes-seconds (stopwatch-to-watchface-string total-seconds))
-         (sub-seconds (format ".%d" (tenths-of-a-second elapsed-time))))
+         (sub-seconds (format ".%d"
+                              (stopwatch-tenths-of-a-second elapsed-time))))
     (concat hours-minutes-seconds sub-seconds)))
 
 (defun minutes-from-seconds (seconds)

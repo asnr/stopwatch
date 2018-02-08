@@ -55,7 +55,7 @@
 (defun stopwatch-get-total-seconds (stopwatch)
   (let* ((stopped-watch (stopwatch-stop stopwatch))
          (total-time (stopwatch-total-time stopped-watch)))
-    (round-down-to-seconds total-time)))
+    (stopwatch-round-down-to-seconds total-time)))
 
 (defun stopwatch-total-time (stopwatch)
   (let* ((stopped-watch (stopwatch-stop stopwatch))
@@ -66,12 +66,14 @@
 
 (defun stopwatch-fraction-to-next-second (stopwatch)
   (let* ((lap-at-last-stop (stopwatch--get-lap-time-at-last-stop stopwatch))
-         (fraction-from-last-second (time-to-seconds (zero-seconds-parts lap-at-last-stop))))
+         (fraction-from-last-second
+          (time-to-seconds (stopwatch-zero-seconds-parts lap-at-last-stop))))
     (- 1 fraction-from-last-second)))
 
 (defun stopwatch-fraction-to-next-tenth (stopwatch)
   (let* ((lap-at-last-stop (stopwatch--get-lap-time-at-last-stop stopwatch))
-         (fraction-from-last-tenth (time-to-seconds (mod-tenths-of-a-second lap-at-last-stop))))
+         (fraction-from-last-tenth
+          (time-to-seconds (stopwatch-mod-tenths-of-a-second lap-at-last-stop))))
     (- 0.1 fraction-from-last-tenth)))
 
 (defalias 'stopwatch--running-p 'stopwatch--get-last-start-time)
