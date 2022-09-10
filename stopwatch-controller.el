@@ -134,4 +134,6 @@
 (defun stopwatch-controller--set-original-window-width (controller original-window-width)
   (setf (cdr (assoc 'original-window-width controller)) original-window-width))
 
+(provide 'stopwatch-controller)
+
 ;;; stopwatch-controller.el ends here

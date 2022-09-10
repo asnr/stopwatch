@@ -30,4 +30,6 @@
 (defun stopwatch-picosec (time)
   (nth 3 time))
 
+(provide 'stopwatch-time-helpers)
+
 ;;; stopwatch-time-helpers.el ends here

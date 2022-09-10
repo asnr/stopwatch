@@ -90,4 +90,6 @@
 (defun stopwatch--get-lap-time-at-last-stop (stopwatch)
   (cdr (assoc 'lap-time-at-last-stop stopwatch)))
 
+(provide 'stopwatch-model)
+
 ;;; stopwatch-model.el ends here

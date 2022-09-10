@@ -65,4 +65,6 @@
            " └──┐ │"
            "    └─┘"))))
 
+(provide 'stopwatch-ascii-art-numbers)
+
 ;;; stopwatch-ascii-art-numbers.el ends here
