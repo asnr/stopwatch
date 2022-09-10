@@ -10,12 +10,12 @@
 
 ;;; Code:
 
-(load-file "./stopwatch-mode.el")
-(load-file "./stopwatch-controller.el")
-(load-file "./stopwatch-model.el")
-(load-file "./stopwatch-ascii-art-numbers.el")
-(load-file "./stopwatch-draw.el")
-(load-file "./stopwatch-time-helpers.el")
+(require 'stopwatch-mode)
+(require 'stopwatch-controller)
+(require 'stopwatch-model)
+(require 'stopwatch-ascii-art-numbers)
+(require 'stopwatch-draw)
+(require 'stopwatch-time-helpers)
 
 (defun stopwatch ()
   "Open a stopwatch in a new window."

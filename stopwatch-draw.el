@@ -110,4 +110,6 @@
    (lambda (c) (cdr (assoc c STOPWATCH-ASCII-ART-NUMBERS)))
    watchface-string))
 
+(provide 'stopwatch-draw)
+
 ;;; stopwatch-draw.el ends here
