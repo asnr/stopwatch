@@ -15,6 +15,7 @@
 
 (define-key stopwatch-mode-map "q" 'kill-buffer-and-window)
 (define-key stopwatch-mode-map "s" 'stopwatch-mode-start-or-stop)
+(define-key stopwatch-mode-map " " 'stopwatch-mode-start-or-stop)
 (define-key stopwatch-mode-map "l" 'stopwatch-mode-end-lap)
 (define-key stopwatch-mode-map "r" 'stopwatch-mode-reset-stopwatch)
 
